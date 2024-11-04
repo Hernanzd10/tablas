@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .logo{
+            position: absolute; 
+            top: 0; 
+            left: 0;
+        }
+        .titulo{
+            position: absolute; 
+            top: 0; left: 50%; 
+            transform: translateX(-50%); 
+            text-align: center; 
+            font-family: Arial, Helvetica, sans-serif; 
+            color: #252525; text-transform: uppercase; 
+            font-size: 1.5rem; 
+            width: 80%;
+        }
+        #print {
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .tabla {
+            width: 100%;
+            padding: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        td {
+            padding: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            color: #252525;
+            font-size: 11px;
+            text-transform: uppercase;
+        }
+        h2 {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #252525;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+        }
+
+        table tr.gnal td:first-child {
+            font-weight: bold;
+        }
+
+        table#ejercito td {
+            border: 1px solid #38493d;
+            text-transform: uppercase;
+        }
+
+        #ejercito tr.gnal td {
+            background-color: #84a68d;
+        }
+
+        #ejercito td {
+            background-color: #a5bea0;
+        }
+
+        #armada tr.gnal td {
+            background-color: #0b75de;
+        }
+
+        #armada td {
+            background-color: #a0b6d3;
+        }
+
+        table#armada td, table#aviacion td, table#guardia td {
+            border: 1px solid #fff;
+        }
+
+        table#aviacion tr.gnal td {
+            background-color: #102248;
+        }
+
+        #aviacion td {
+            background-color: #094492;
+            color: #fff;
+        }
+
+        table#guardia tr.gnal td {
+            background-color: #882c1f;
+        }
+
+        #guardia td {
+            background-color: #b33326;
+            color: #fff;
+        }
+
+        table.totales {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table.totales thead th, .total td {
+            background-color: #c2c2c2;
+            color: #252525;
+            font-family: Arial, Helvetica, sans-serif;
+            text-transform: uppercase;
+            font-size: 11px;
+            padding: 15px;
+            font-weight: bold;
+            border: 1px solid #252525;
+        }
+        table.totales tbody td{
+            border: 1px solid #252525;
+            padding: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+    <title>Parte Numerico</title>
+</head>
+<body>
+    <img src="./mppd.png" class="logo" width="80px">
+    <h1 class="titulo">Parte numerico de los oficiales generales, almirantes, coroneles y capitanes de la fuerza armada nacional bolivariana</h1>
+    <div id="print" style="padding: 70px 0 0 0;">
+        <!-- EJERCITO -->
+        <div class="tabla">
+            <h2>Ejercito Bolivariano</h2>
+            <table id="ejercito">
+                <tbody>
+                    <tr class="gnal">
+                        <td colspan="2">Generales en Jefe</td>
+                        <td>3</td>
+                        <td rowspan="4">Total Generales <strong>263</strong></td>
+                    </tr>
+                    <tr class="gnal">
+                        <td colspan="2">Mayor General</td>
+                        <td>19</td>
+                    </tr>
+                    <tr class="gnal">
+                        <td colspan="2">General de Division</td>
+                        <td>117</td>
+                    </tr>
+                    <tr class="gnal">
+                        <td colspan="2">General de Brigada</td>
+                        <td>124</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="4"><strong>CNEL</strong></td>
+                        <td>Comando</td>
+                        <td>551</td>
+                        <td><strong>551</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Tecnico</td>
+                        <td>479</td>
+                        <td rowspan="3">Total Coroneles <strong>1.148</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Tropa</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>Asimilado</td>
+                        <td>114</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ARMADA -->
+        <div class="tabla">
+            <h2>Armada Bolivariana</h2>
+            <table id="armada">
+                <tbody>
+                    <tr class="gnal">
+                        <td colspan="2">Almirantes en jefe en Jefe</td>
+                        <td>1</td>
+                        <td rowspan="4">Total Generales <strong>263</strong></td>
+                    </tr>
+                    <tr class="gnal">
+                        <td colspan="2">Almirantes</td>
+                        <td>6</td>
+                    </tr>
+                    <tr class="gnal">
+                        <td colspan="2">Vicealmirante</td>
+                        <td>57</td>
+                    </tr>
+                    <tr class="gnal">
+                        <td colspan="2">Contraalmirante</td>
+                        <td>71</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="4"><strong>CN</strong></td>
+                        <td>Comando</td>
+                        <td>95</td>
+                        <td><strong>95</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Tecnico</td>
+                        <td>51</td>
+                        <td rowspan="3">Total Capitanes de Navio <strong>335</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Tropa</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td>Asimilado</td>
+                        <td>114</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="tabla">
+            <h2>Generales y Almirantes</h2>
+            <table class="totales">
+                <thead>
+                    <tr>
+                        <th>Grados</th>
+                        <th>Ejercito</th>
+                        <th>Armada</th>
+                        <th>Aviacion</th>
+                        <th>Guardia</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>GJ - AJ</td>
+                        <td>3</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>1</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>MG - ALM</td>
+                        <td>19</td>
+                        <td>6</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>34</td>
+                    </tr>
+                    <tr>
+                        <td>GD - VA</td>
+                        <td>117</td>
+                        <td>57</td>
+                        <td>52</td>
+                        <td>81</td>
+                        <td>307</td>
+                    </tr>
+                    <tr>
+                        <td>GB - CA</td>
+                        <td>124</td>
+                        <td>71</td>
+                        <td>61</td>
+                        <td>97</td>
+                        <td>353</td>
+                    </tr>
+                    <tr class="total">
+                        <td>Total</td>
+                        <td>263</td>
+                        <td>135</td>
+                        <td>117</td>
+                        <td>184</td>
+                        <td>699</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- AVIACION -->
+        <div class="tabla">
+            <h2>Aviacion Militar Bolivariana</h2>
+            <table id="aviacion">
+                <tbody>
+                    <tr class="gnal">
+                        <td colspan="2">Generales en Jefe</td>
+                        <td>0</td>
+                        <td rowspan="4">Total Generales <strong>117</strong></td>
+                    </tr>
+                    <tr class="gnal">
+                        <td colspan="2">Mayor General</td>
+                        <td>4</td>
+                    </tr>
+                    <tr class="gnal">
+                        <td colspan="2">General de Division</td>
+                        <td>52</td>
+                    </tr>
+                    <tr class="gnal">
+                        <td colspan="2">General de Brigada</td>
+                        <td>61</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="4"><strong>CNEL</strong></td>
+                        <td>Comando</td>
+                        <td>107</td>
+                        <td><strong>107</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Tecnico</td>
+                        <td>479</td>
+                        <td rowspan="3">Total Coroneles <strong>693</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Tropa</td>
+                        <td>00</td>
+                    </tr>
+                    <tr>
+                        <td>Asimilado</td>
+                        <td>89</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- GUARDIA -->
+        <div class="tabla">
+            <h2>Guardia Nacional Bolivariana</h2>
+            <table id="guardia">
+                <tbody>
+                    <tr class="gnal">
+                        <td colspan="2">Generales en Jefe</td>
+                        <td>0</td>
+                        <td rowspan="4">Total Generales <strong>117</strong></td>
+                    </tr>
+                    <tr class="gnal">
+                        <td colspan="2">Mayor General</td>
+                        <td>4</td>
+                    </tr>
+                    <tr class="gnal">
+                        <td colspan="2">General de Division</td>
+                        <td>52</td>
+                    </tr>
+                    <tr class="gnal">
+                        <td colspan="2">General de Brigada</td>
+                        <td>61</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="4"><strong>CNEL</strong></td>
+                        <td>Comando</td>
+                        <td>107</td>
+                        <td><strong>107</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Tecnico</td>
+                        <td>479</td>
+                        <td rowspan="3">Total Coroneles <strong>693</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Tropa</td>
+                        <td>00</td>
+                    </tr>
+                    <tr>
+                        <td>Asimilado</td>
+                        <td>89</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="tabla">
+            <h2>Generales y Almirantes</h2>
+            <table class="totales">
+                <thead>
+                    <tr>
+                        <th>Categorias</th>
+                        <th>Ejercito</th>
+                        <th>Armada</th>
+                        <th>Aviacion</th>
+                        <th>Guardia</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Comando</td>
+                        <td>551</td>
+                        <td>95</td>
+                        <td>107</td>
+                        <td>282</td>
+                        <td>1.035</td>
+                    </tr>
+                    <tr>
+                        <td>Tecnico</td>
+                        <td>479</td>
+                        <td>188</td>
+                        <td>497</td>
+                        <td>232</td>
+                        <td>1396</td>
+                    </tr>
+                    <tr>
+                        <td>Tropa</td>
+                        <td>4</td>
+                        <td>1</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <td>Asimilado</td>
+                        <td>114</td>
+                        <td>51</td>
+                        <td>89</td>
+                        <td>75</td>
+                        <td>329</td>
+                    </tr>
+                    <tr class="total">
+                        <td>Total</td>
+                        <td>1148</td>
+                        <td>335</td>
+                        <td>693</td>
+                        <td>589</td>
+                        <td>2765</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+</body>
+</html>
