@@ -5,66 +5,147 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        table,
-        th,
-        td {
-            border: 1px solid black;
+
+        *, *::after, *::before{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #print{
+            padding-top: 115px;
+            display: flex;
+            align-items: start;
+        }
+
+        .columna{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            align-items: start;
+            gap: 10px;
+        }
+
+        table{
             border-collapse: collapse;
-            padding: 5px;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 3px;
+            font-size: 8px;
             text-align: center;
             font-family: Arial, Helvetica, sans-serif;
         }
 
-        h1 {
-            font-size: 25px;
-            text-align: center;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-weight: 100;
+        .blue {
             background-color: rgb(22, 132, 223);
-            width: 350PX;
-            /* height: 85PX; */
-            padding: 10px;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .orange {
+            background-color: rgb(219, 106, 13);
+        }
+
+        .white {
             color: white;
-            border-radius: 10px;
+        }
+
+        .blue-dark {
+            background-color: #13294D;
+        }
+
+        .logo {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .titulo {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #252525;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            width: 80%;
         }
 
         h2 {
-            font-size: 25px;
+            font-size: 11px;
             text-align: center;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-weight: 100;
-            background-color: green;
-            width: 350PX;
-            /* height: 85PX; */
-            padding: 10px;
+            font-weight: 700;
+            width: 200PX;
+            height: 30px;
+            padding: 5px;
             color: white;
             border-radius: 10px;
         }
 
-        h3 {
-            font-size: 25px;
-            text-align: center;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-weight: 100;
-            background-color: rgb(219, 106, 13);
-            width: 350PX;
-            /* height: 85PX; */
-            padding: 10px;
-            color: white;
-            border-radius: 10px;
+        .tabla{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 5px;
         }
 
-        h4 {
-            font-size: 25px;
-            text-align: center;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            font-weight: 100;
-            background-color: rgb(16, 9, 75);
-            width: 350PX;
-            /* height: 85PX; */
-            padding: 10px;
-            color: white;
-            border-radius: 10px;
+        .tabla-flotante {
+            position: absolute;
+            top: 30px; 
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+        }
+
+        .tabla-flotante table th{
+            color: #fff;
+        }
+
+        .tabla-flotante table td, .tabla-flotante table th{
+            border: 1px solid #fff;
+            font-size: 11px;
+        }
+
+        .tabla-flotante table th{
+            width: 140px;
+            font-weight: 700;
+        }
+
+        .tabla-grande table td, .tabla-grande table th{
+            font-size: 7px;
+        }
+
+        .fila{
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: space-around;
+            margin-top: 10px;
+        }
+
+        .flex-column{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .punto-flotante {
+            position: absolute;
+            top: 83px; 
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 3px 12px;
+            background-color: #82e0aa;
+            border: 1px solid rgb(22, 132, 223);
+            border-radius: 5px;
+            font-family: Arial, Helvetica, sans-serif;
         }
     </style>
     <title>Tablas</title>
@@ -73,431 +154,9 @@
 <body>
     <img src="./mppd.png" class="logo" width="80px">
 
-    <h1 class="titulo">
-        Parte numerico de los oficiales generales, almirantes, coroneles y capitanes de la fuerza armada
-        nacional bolivariana
-    </h1>
+    <h1 class="titulo">Cuerpo de Generales y Almirantes</h1>
 
-    <div id="print" style="padding: 70px 0 0 0;">
-
-        <h2>MINISTERIO DEL PODER POPULAR PARA LA DEFENSA</h2>
-        <table class="MPPD">
-            <thead>
-                <tr>
-                    <th>&nbsp;</th>
-                    <th>GJ - AJ</th>
-                    <th>MG - ALM</th>
-                    <th>GD - VA</th>
-                    <th>GB - CA</th>
-                    <th>TOTAL</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr bgcolor=#e5e7e9>
-                    <td><strong>EB</strong></td>
-                    <td>01</td>
-                    <td>01</td>
-                    <td>03</td>
-                    <td>04</td>
-                    <td>09</td>
-                </tr>
-                <tr>
-                    <td><strong>AB</strong></td>
-                    <td>01</td>
-                    <td>01</td>
-                    <td>02</td>
-                    <td></td>
-                </tr>
-                <tr bgcolor=#e5e7e9>
-                    <td><strong>AMB</strong></td>
-                    <td></td>
-                    <td>01</td>
-                    <td>01</td>
-                    <td>01</td>
-                    <td>03</td>
-                </tr>
-                <tr>
-                    <td><strong>GNB</strong></>
-                    <td></td>
-                    <td></td>
-                    <td>01</td>
-                    <td>02</td>
-                    <td>03</td>
-                </tr>
-                <tr bgcolor=#e5e7e9>
-                    <th><strong>TOTAL</strong></th>
-                    <td>01</td>
-                    <td>03</td>
-                    <td>05</td>
-                    <td>08</td>
-                    <td>17</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2>CONTRALORIA GENERAL DE LA FANB</h2>
-        <table class="contraloria">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>MG - ALM</th>
-                    <th>GD - VA</th>
-                    <th>GB - CA</th>
-                    <th>TOTAL</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr bgcolor=#e5e7e9>
-                    <td><strong>EB</strong></td>
-                    <td>01</td>
-                    <td>01</td>
-                    <td>03</td>
-                    <td>04</td>
-                </tr>
-                <tr>
-                    <td><strong>AB</strong></td>
-                    <td></td>
-                    <td>01</td>
-                    <td></td>
-                    <td>01</td>
-                </tr>
-                <tr bgcolor=#e5e7e9>
-                    <td><strong>AMB</strong></td>
-                    <td></td>
-                    <td>01</td>
-                    <td>01</td>
-                    <td>01</td>
-                </tr>
-                <tr>
-                    <td><strong>TOTAL</strong></td>
-                    <td>01</td>
-                    <td>03</td>
-                    <td>05</td>
-                    <td>08</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2>INSPECTORIA GENERAL DE LA FANB</h2>
-        <table class="inspectoria">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>MG - ALM</th>
-                    <th>GD - VA</th>
-                    <th>GB - CA</th>
-                    <th>TOTAL</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr bgcolor=#e5e7e9>
-                    <td><strong>EB</strong></td>
-                    <td>01</td>
-                    <td>01</td>
-                    <td>03</td>
-                    <td>04</td>
-                </tr>
-                <tr>
-                    <td><strong>AB</strong></td>
-                    <td></td>
-                    <td>01</td>
-                    <td></td>
-                    <td>01</td>
-                </tr>
-                <tr bgcolor=#e5e7e9>
-                    <td><strong>AMB</strong></td>
-                    <td></td>
-                    <td>01</td>
-                    <td>01</td>
-                    <td>01</td>
-                </tr>
-                <tr>
-                    <th><strong>GNB</strong></th>
-                    <td></Td>
-                    <td></td>
-                    <td>01</td>
-                    <td>02</td>
-                </tr>
-                <tr bgcolor=#e5e7e9>
-                    <th><strong>TOTAL</strong></th>
-                    <td>01</td>
-                    <td>03</td>
-                    <td>05</td>
-                    <td>08</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2>SISTEMA DE JUSTICIA MILITAR</h2>
-        <table class="inspectoria">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>MG - ALM</th>
-                    <th>GD - VA</th>
-                    <th>GB - CA</th>
-                    <th>TOTAL</th>
-                </tr>
-            </thead>
-            <tbody>
-
-                <tr bgcolor=#e5e7e9>
-                    <td><strong>EB</strong></td>
-                    <td>01</td>
-                    <td>01</td>
-                    <td>03</td>
-                    <td>04</td>
-                </tr>
-
-                <tr>
-                    <td><strong>AMB</strong></td>
-                    <td></td>
-                    <td>01</td>
-                    <td>01</td>
-                    <td>01</td>
-                </tr>
-
-                <tr bgcolor=#e5e7e9>
-                    <td><strong>GNB</strong></td>
-                    <td></Td>
-                    <td></td>
-                    <td>01</td>
-                    <td>02</td>
-                </tr>
-
-                <tr>
-                    <td><strong>TOTAL</strong></td>
-                    <td>01</td>
-                    <td>03</td>
-                    <td>05</td>
-                    <td>08</td>
-                </tr>
-
-            </tbody>
-        </table>
-
-        <h2>VICEMINISTERIOS DE SERVICIO</h2>
-        <table class="viceministerio servicios">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>MG - ALM</th>
-                    <th>GD - VA</th>
-                    <th>GB - CA</th>
-                    <th>TOTAL</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr bgcolor=#e5e7e9>
-                    <th>EB
-                    <td>01
-                    <td>01
-                    <td>03
-                    <td>04</td>
-                    </td>
-                    </td>
-                    </td>
-                    </th>
-                </tr>
-                <tr>
-                    <th>AB
-                    <td>
-                    <td>01
-                    <td>
-                    <td>01</td>
-                    </td>
-                    </td>
-                    </td>
-                    </th>
-                </tr>
-                <tr bgcolor=#e5e7e9>
-                    <th>AMB</th>
-                    <td></td>
-                    <td>01</td>
-                    <td>01</td>
-                    <td>01</td>
-                </tr>
-                <tr>
-                    <th>GNB</th>
-                    <td></Td>
-                    <td></td>
-                    <td>01</td>
-                    <td>02</td>
-                </tr>
-                <tr bgcolor=#e5e7e9>
-                    <th>TOTAL</th>
-                    <td>01</td>
-                    <td>03</td>
-                    <td>05</td>
-                    <td>08</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2>VICEMINISTERIO DE PLANIFICACION Y DESARROLLO</h2>
-        <table class="viceministerio planificacion y desarrollo ">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>MG - ALM</th>
-                    <th>GD - VA</th>
-                    <th>GB - CA</th>
-                    <th>TOTAL</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr bgcolor=#e5e7e9>
-                    <td><strong>EB</strong></td>
-                    <td>01</td>
-                    <td>01</td>
-                    <td>03</td>
-                    <td>04</td>
-                </tr>
-                <tr>
-                    <td><strong>AB</strong></td>
-                    <td></td>
-                    <td>01</td>
-                    <td></td>
-                    <td>01</td>
-                </tr>
-                <tr bgcolor=#e5e7e9>
-                    <td><strong>AMB</strong></td>
-                    <td></td>
-                    <td>01</td>
-                    <td>01</td>
-                    <td>01</td>
-                </tr>
-
-                </tr>
-                <tr>
-                    <th>TOTAL</th>
-                    <td>01</td>
-                    <td>03</td>
-                    <td>05</td>
-                    <td>08</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2>VICEMINISTERIO DE EDUCACION</h2>
-        <table class="viceministerio educacion">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>MG - ALM</th>
-                    <th>GD - VA</th>
-                    <th>GB - CA</th>
-                    <th>TOTAL</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr bgcolor=#e5e7e9>
-                    <td>EB</td>
-                    <td>01</td>
-                    <td>01</td>
-                    <td>03</td>
-                    <td>04</td>
-                </tr>
-                <tr>
-                    <td>AB</td>
-                    <td></td>
-                    <td>01</td>
-                    <td></td>
-                    <td>01</td>
-                </tr>
-                <tr bgcolor=#e5e7e9>
-                    <th>AMB</th>
-                    <td></td>
-                    <td>01</td>
-                    <td>01</td>
-                    <td>01</td>
-                </tr>
-                <tr>
-                    <th>GNB</th>
-                    <td></Td>
-                    <td></td>
-                    <td>01</td>
-                    <td>02</td>
-                </tr>
-                <tr bgcolor=#e5e7e9>
-                    <th>TOTAL</th>
-                    <td>01</td>
-                    <td>03</td>
-                    <td>05</td>
-                    <td>08</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2>DIRECCION GENERAL DE CONTRAINTELIGENCIA MILITAR</h2>
-        <table class="direccion general de contrainteligencia militar">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>GD - VA</th>
-                    <th>GB - CA</th>
-                    <th>TOTAL</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr bgcolor=#e5e7e9>
-                    <td><strong>AB</strong></td>
-                    <td></td>
-                    <td>01</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td><strong>GNB</strong></td>
-                    <td></Td>
-                    <td></td>
-                    <td>01</td>
-                </tr>
-                <tr bgcolor=#e5e7e9>
-                    <td><strong>TOTAL</strong></td>
-                    <td>01</td>
-                    <td>03</td>
-                    <td>05</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2>GUARDIA DE HONOR PRESIDENCIAL</h2>
-        <table class="guardia de honor presidencial">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>MG - ALM</th>
-                    <th>GD - VA</th>
-                    <th>GB - CA</th>
-                    <th>TOTAL</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr bgcolor=#e5e7e9>
-                    <td><strong>EB</strong></td>
-                    <td>01</td>
-                    <td>01</td>
-                    <td>03</td>
-                    <td>04</td>
-                </tr>
-                <tr>
-                    <td><strong>AMB</strong></th>
-                    <td></td>
-                    <td>01</td>
-                    <td>01</td>
-                    <td>01</td>
-                </tr>
-                <tr bgcolor=#e5e7e9>
-                    <td><strong>TOTAL</strong></td>
-                    <td>01</td>
-                    <td>03</td>
-                    <td>05</td>
-                    <td>08</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2>CUERPO DE GENERALES Y ALMIRANTES</h2>
+    <div class="tabla tabla-flotante">
         <table>
             <thead>
                 <tr bgcolor=#3498db>
@@ -514,578 +173,1050 @@
                     <td>117</td>
                     <td>184</td>
                 </tr>
-                <tr bgcolor="82e0aa">
-                    <td>699</td>
-                </tr>
             </tbody>
         </table>
+    </div>
+    <div class="punto-flotante">
+        699
+    </div>
 
-        <h2>EJERCITO BOLIVARIANO</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>MG - ALM</th>
-                    <th>GD - VA</th>
-                    <th>GB - CA</th>
-                    <th>TOTAL</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr bgcolor=#e5e7e9>
-                    <td>01</td>
-                    <td>22</td>
-                    <td>39</td>
-                    <td>62</td>
-                </tr>
-            </tbody>
-        </table>
+    <div id="print">
 
-        <h2>AVIACION MILITAR BOLIVARIANA</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>MG - ALM</th>
-                    <th>GD - VA</th>
-                    <th>GB - CA</th>
-                    <th>TOTAL</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr bgcolor=#e5e7e9>
-                    <td>01</td>
-                    <td>25</td>
-                    <td>25</td>
-                    <td>51</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="columna">
+            <div class="tabla">
+                <h2 class="blue">MINISTERIO DEL PODER POPULAR PARA LA DEFENSA</h2>
+                <table class="MPPD">
+                    <thead>
+                        <tr>
+                            <th>&nbsp;</th>
+                            <th>GJ - AJ</th>
+                            <th>MG - ALM</th>
+                            <th>GD - VA</th>
+                            <th>GB - CA</th>
+                            <th>TOTAL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr bgcolor=#e5e7e9>
+                            <td><strong>EB</strong></td>
+                            <td>01</td>
+                            <td>01</td>
+                            <td>03</td>
+                            <td>04</td>
+                            <td>09</td>
+                        </tr>
+                        <tr>
+                            <td><strong>AB</strong></td>
+                            <td>01</td>
+                            <td>01</td>
+                            <td>02</td>
+                            <td></td>
+                        </tr>
+                        <tr bgcolor=#e5e7e9>
+                            <td><strong>AMB</strong></td>
+                            <td></td>
+                            <td>01</td>
+                            <td>01</td>
+                            <td>01</td>
+                            <td>03</td>
+                        </tr>
+                        <tr>
+                            <td><strong>GNB</strong></>
+                            <td></td>
+                            <td></td>
+                            <td>01</td>
+                            <td>02</td>
+                            <td>03</td>
+                        </tr>
+                        <tr bgcolor=#e5e7e9>
+                            <th><strong>TOTAL</strong></th>
+                            <td>01</td>
+                            <td>03</td>
+                            <td>05</td>
+                            <td>08</td>
+                            <td>17</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-        <h2>COMANDO ESTRATEGICO OPERACIONAL</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>GJ - AJ</th>
-                    <th>MG - ALM</th>
-                    <th>GD - VA</th>
-                    <th>GB - CA</th>
-                    <th>TOTAL</th>
-                </tr>
-            </thead>
-            <tbody>
+            <div class="tabla">
+                <h2 class="blue">CONTRALORIA GENERAL DE LA FANB</h2>
+                <table class="contraloria">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>MG - ALM</th>
+                            <th>GD - VA</th>
+                            <th>GB - CA</th>
+                            <th>TOTAL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr bgcolor=#e5e7e9>
+                            <td><strong>EB</strong></td>
+                            <td>01</td>
+                            <td>01</td>
+                            <td>03</td>
+                            <td>04</td>
+                        </tr>
+                        <tr>
+                            <td><strong>AB</strong></td>
+                            <td></td>
+                            <td>01</td>
+                            <td></td>
+                            <td>01</td>
+                        </tr>
+                        <tr bgcolor=#e5e7e9>
+                            <td><strong>AMB</strong></td>
+                            <td></td>
+                            <td>01</td>
+                            <td>01</td>
+                            <td>01</td>
+                        </tr>
+                        <tr>
+                            <td><strong>TOTAL</strong></td>
+                            <td>01</td>
+                            <td>03</td>
+                            <td>05</td>
+                            <td>08</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-                <tr bgcolor=#e5e7e9>
-                    <td><strong>EB</strong></td>
-                    <td>01</td>
-                    <td>05</td>
-                    <td>39</td>
-                    <td>35</td>
-                    <td>80</td>
-                </tr>
+            <div class="tabla">
+                <h2 class="blue">INSPECTORIA GENERAL DE LA FANB</h2>
+                <table class="inspectoria">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>MG - ALM</th>
+                            <th>GD - VA</th>
+                            <th>GB - CA</th>
+                            <th>TOTAL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr bgcolor=#e5e7e9>
+                            <td><strong>EB</strong></td>
+                            <td>01</td>
+                            <td>01</td>
+                            <td>03</td>
+                            <td>04</td>
+                        </tr>
+                        <tr>
+                            <td><strong>AB</strong></td>
+                            <td></td>
+                            <td>01</td>
+                            <td></td>
+                            <td>01</td>
+                        </tr>
+                        <tr bgcolor=#e5e7e9>
+                            <td><strong>AMB</strong></td>
+                            <td></td>
+                            <td>01</td>
+                            <td>01</td>
+                            <td>01</td>
+                        </tr>
+                        <tr>
+                            <th><strong>GNB</strong></th>
+                            <td></Td>
+                            <td></td>
+                            <td>01</td>
+                            <td>02</td>
+                        </tr>
+                        <tr bgcolor=#e5e7e9>
+                            <th><strong>TOTAL</strong></th>
+                            <td>01</td>
+                            <td>03</td>
+                            <td>05</td>
+                            <td>08</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-                <tr>
-                    <td><strong>AB</strong></td>
-                    <td></td>
-                    <td>03</td>
-                    <td>16</td>
-                    <td>10</td>
-                    <Td>29</Td>
-                </tr>
+            <div class="tabla">
+                <h2 class="blue">SISTEMA DE JUSTICIA MILITAR</h2>
+                <table class="inspectoria">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>MG - ALM</th>
+                            <th>GD - VA</th>
+                            <th>GB - CA</th>
+                            <th>TOTAL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                <tr bgcolor=#e5e7e9>
-                    <td><strong>AMB</strong></td>
-                    <td></td>
-                    <td>02</td>
-                    <td>14</td>
-                    <td>12</td>
-                    <Td>28</Td>
-                </tr>
+                        <tr bgcolor=#e5e7e9>
+                            <td><strong>EB</strong></td>
+                            <td>01</td>
+                            <td>01</td>
+                            <td>03</td>
+                            <td>04</td>
+                        </tr>
 
-                <tr>
-                    <td><strong>GNB</strong></td>
-                    <td></td>
-                    <td>02</td>
-                    <td>14</td>
-                    <td>30</td>
-                    <Td>46</Td>
-                </tr>
+                        <tr>
+                            <td><strong>AMB</strong></td>
+                            <td></td>
+                            <td>01</td>
+                            <td>01</td>
+                            <td>01</td>
+                        </tr>
 
-                <tr bgcolor=#e5e7e9>
-                    <td><strong>TOTAL</strong></td>
-                    <td>01</td>
-                    <td>12</td>
-                    <td>83</td>
-                    <td>87</td>
-                    <Td>183</Td>
-                </tr>
+                        <tr bgcolor=#e5e7e9>
+                            <td><strong>GNB</strong></td>
+                            <td></Td>
+                            <td></td>
+                            <td>01</td>
+                            <td>02</td>
+                        </tr>
 
-            </tbody>
-        </table>
+                        <tr>
+                            <td><strong>TOTAL</strong></td>
+                            <td>01</td>
+                            <td>03</td>
+                            <td>05</td>
+                            <td>08</td>
+                        </tr>
 
-        <h2>MILICIA BOLIVARIANA</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>MG - ALM</th>
-                    <th>GD - VA</th>
-                    <th>GB - CA</th>
-                    <th>TOTAL</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr bgcolor=#e5e7e9>
-                    <td><strong>EB</strong></td>
-                    <td>01</td>
-                    <td>07</td>
-                    <td>18</td>
-                    <td>26</td>
-                </tr>
+                    </tbody>
+                </table>
+            </div>
 
-                <tr>
-                    <td><strong>AB</strong></td>
-                    <td></td>
-                    <td>03</td>
-                    <td>04</td>
-                    <td>07</td>
-                </tr>
+            <div class="tabla">
+                <h2 class="blue">VICEMINISTERIOS DE SERVICIO</h2>
+                <table class="viceministerio servicios">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>MG - ALM</th>
+                            <th>GD - VA</th>
+                            <th>GB - CA</th>
+                            <th>TOTAL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr bgcolor=#e5e7e9>
+                            <th>EB
+                            <td>01
+                            <td>01
+                            <td>03
+                            <td>04</td>
+                            </td>
+                            </td>
+                            </td>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>AB
+                            <td>
+                            <td>01
+                            <td>
+                            <td>01</td>
+                            </td>
+                            </td>
+                            </td>
+                            </th>
+                        </tr>
+                        <tr bgcolor=#e5e7e9>
+                            <th>AMB</th>
+                            <td></td>
+                            <td>01</td>
+                            <td>01</td>
+                            <td>01</td>
+                        </tr>
+                        <tr>
+                            <th>GNB</th>
+                            <td></Td>
+                            <td></td>
+                            <td>01</td>
+                            <td>02</td>
+                        </tr>
+                        <tr bgcolor=#e5e7e9>
+                            <th>TOTAL</th>
+                            <td>01</td>
+                            <td>03</td>
+                            <td>05</td>
+                            <td>08</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-                <tr bgcolor=#e5e7e9>
-                    <td><strong>AMB</strong></td>
-                    <td></td>
-                    <td>03</td>
-                    <td>02</td>
-                    <td>05</td>
-                </tr>
+            <div class="tabla">
+                <h2 class="blue">VICEMINISTERIO DE PLANIFICACION Y DESARROLLO</h2>
+                <table class="viceministerio planificacion y desarrollo ">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>MG - ALM</th>
+                            <th>GD - VA</th>
+                            <th>GB - CA</th>
+                            <th>TOTAL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr bgcolor=#e5e7e9>
+                            <td><strong>EB</strong></td>
+                            <td>01</td>
+                            <td>01</td>
+                            <td>03</td>
+                            <td>04</td>
+                        </tr>
+                        <tr>
+                            <td><strong>AB</strong></td>
+                            <td></td>
+                            <td>01</td>
+                            <td></td>
+                            <td>01</td>
+                        </tr>
+                        <tr bgcolor=#e5e7e9>
+                            <td><strong>AMB</strong></td>
+                            <td></td>
+                            <td>01</td>
+                            <td>01</td>
+                            <td>01</td>
+                        </tr>
 
-                <tr>
-                    <td><strong>GNB</strong></td>
-                    <td></td>
-                    <td>01</td>
-                    <td>07</td>
-                    <td>08</td>
-                </tr>
+                        </tr>
+                        <tr>
+                            <th>TOTAL</th>
+                            <td>01</td>
+                            <td>03</td>
+                            <td>05</td>
+                            <td>08</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-                <tr bgcolor=#e5e7e9>
-                    <td><strong>TOTAL</strong></td>
-                    <td>01</td>
-                    <td>14</td>
-                    <td>31</td>
-                    <td>46</td>
-                </tr>
-            </tbody>
-        </table>
+            <div class="tabla">
+                <h2 class="blue">VICEMINISTERIO DE EDUCACION</h2>
+                <table class="viceministerio educacion">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>MG - ALM</th>
+                            <th>GD - VA</th>
+                            <th>GB - CA</th>
+                            <th>TOTAL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr bgcolor=#e5e7e9>
+                            <td>EB</td>
+                            <td>01</td>
+                            <td>01</td>
+                            <td>03</td>
+                            <td>04</td>
+                        </tr>
+                        <tr>
+                            <td>AB</td>
+                            <td></td>
+                            <td>01</td>
+                            <td></td>
+                            <td>01</td>
+                        </tr>
+                        <tr bgcolor=#e5e7e9>
+                            <th>AMB</th>
+                            <td></td>
+                            <td>01</td>
+                            <td>01</td>
+                            <td>01</td>
+                        </tr>
+                        <tr>
+                            <th>GNB</th>
+                            <td></Td>
+                            <td></td>
+                            <td>01</td>
+                            <td>02</td>
+                        </tr>
+                        <tr bgcolor=#e5e7e9>
+                            <th>TOTAL</th>
+                            <td>01</td>
+                            <td>03</td>
+                            <td>05</td>
+                            <td>08</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-        <h2>ARMADA BOLIVARIANA</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>MG - ALM</th>
-                    <th>GD - VA</th>
-                    <th>GB - CA</th>
-                    <th>TOTAL</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr bgcolor=#e5e7e9>
-                    <td>01</td>
-                    <td>20</td>
-                    <td>37</td>
-                    <td>58</td>
-                </tr>
-            </tbody>
-        </table>
+            <div class="tabla">
+                <h2 class="blue">DIRECCION GENERAL DE CONTRAINTELIGENCIA MILITAR</h2>
+                <table class="direccion general de contrainteligencia militar">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>GD - VA</th>
+                            <th>GB - CA</th>
+                            <th>TOTAL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr bgcolor=#e5e7e9>
+                            <td><strong>AB</strong></td>
+                            <td></td>
+                            <td>01</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><strong>GNB</strong></td>
+                            <td></Td>
+                            <td></td>
+                            <td>01</td>
+                        </tr>
+                        <tr bgcolor=#e5e7e9>
+                            <td><strong>TOTAL</strong></td>
+                            <td>01</td>
+                            <td>03</td>
+                            <td>05</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-        <h2>GUARDIA NACIONAL BOLIVARIANA</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>MG - ALM</th>
-                    <th>GD - VA</th>
-                    <th>GB - CA</th>
-                    <th>TOTAL</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr bgcolor=#e5e7e9>
-                    <td>01</td>
-                    <td>29</td>
-                    <td>36</td>
-                    <td>69</td>
-                </tr>
-            </tbody>
-        </table>
+            <div class="tabla">
+                <h2 class="blue">GUARDIA DE HONOR PRESIDENCIAL</h2>
+                <table class="guardia de honor presidencial">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>MG - ALM</th>
+                            <th>GD - VA</th>
+                            <th>GB - CA</th>
+                            <th>TOTAL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr bgcolor=#e5e7e9>
+                            <td><strong>EB</strong></td>
+                            <td>01</td>
+                            <td>01</td>
+                            <td>03</td>
+                            <td>04</td>
+                        </tr>
+                        <tr>
+                            <td><strong>AMB</strong></th>
+                            <td></td>
+                            <td>01</td>
+                            <td>01</td>
+                            <td>01</td>
+                        </tr>
+                        <tr bgcolor=#e5e7e9>
+                            <td><strong>TOTAL</strong></td>
+                            <td>01</td>
+                            <td>03</td>
+                            <td>05</td>
+                            <td>08</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-        <h3>ADMINISTRACION PUBLICA</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>GJ - AJ</th>
-                    <th>MG - ALM</th>
-                    <th>GD - VA</th>
-                    <th>GB - CA</th>
-                    <th>TOTAL</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr bgcolor=#e5e7e9>
-                    <td><strong>EB</strong></td>
-                    <td>01</td>
-                    <td>04</td>
-                    <td>11</td>
-                    <td>07</td>
-                    <td>23</td>
-                </tr>
+            <div class="tabla">
+                <h2 class="orange">ADMINISTRACION PUBLICA</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>GJ - AJ</th>
+                            <th>MG - ALM</th>
+                            <th>GD - VA</th>
+                            <th>GB - CA</th>
+                            <th>TOTAL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr bgcolor=#e5e7e9>
+                            <td><strong>EB</strong></td>
+                            <td>01</td>
+                            <td>04</td>
+                            <td>11</td>
+                            <td>07</td>
+                            <td>23</td>
+                        </tr>
 
-                <tr>
-                    <td><strong>AB</strong></td>
-                    <td>01</td>
-                    <td>01</td>
-                    <td>09</td>
-                    <td>09</td>
-                    <td>16</td>
-                </tr>
+                        <tr>
+                            <td><strong>AB</strong></td>
+                            <td>01</td>
+                            <td>01</td>
+                            <td>09</td>
+                            <td>09</td>
+                            <td>16</td>
+                        </tr>
 
-                <tr bgcolor=#e5e7e9>
-                    <td><strong>AMB</strong></td>
-                    <td></td>
-                    <td></td>
-                    <td>03</td>
-                    <td>07</td>
-                    <td>10</td>
-                </tr>
+                        <tr bgcolor=#e5e7e9>
+                            <td><strong>AMB</strong></td>
+                            <td></td>
+                            <td></td>
+                            <td>03</td>
+                            <td>07</td>
+                            <td>10</td>
+                        </tr>
 
-                <tr>
-                    <td><strong>GNB</strong></th>
-                    <td>00</td>
-                    <td></td>
-                    <td>20</td>
-                    <td>07</td>
-                    <td>23</td>
-                </tr>
+                        <tr>
+                            <td><strong>GNB</strong></th>
+                            <td>00</td>
+                            <td></td>
+                            <td>20</td>
+                            <td>07</td>
+                            <td>23</td>
+                        </tr>
 
-                <tr bgcolor=#e5e7e9>
-                    <td><strong>TOTAL</strong></td>
-                    <td>05</td>
-                    <td>05</td>
-                    <td>19</td>
-                    <td>52</td>
-                    <td>29</td>
-                </tr>
-            </tbody>
-        </table>
+                        <tr bgcolor=#e5e7e9>
+                            <td><strong>TOTAL</strong></td>
+                            <td>05</td>
+                            <td>05</td>
+                            <td>19</td>
+                            <td>52</td>
+                            <td>29</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-        <h3>COMISION EXTERIOR</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>GD - VA</th>
-                    <th>GB - CA</th>
-                    <th>TOTAL</th>
-                </tr>
-            <tbody>
-                <tr bgcolor=#e5e7e9>
-                    <td><strong>EB</strong></th>
-                    <td>07</td>
-                    <td></td>
-                    <td>07</td>
-                </tr>
+            <div class="tabla">
+                <h2 class="orange">COMISION EXTERIOR</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>GD - VA</th>
+                            <th>GB - CA</th>
+                            <th>TOTAL</th>
+                        </tr>
+                    <tbody>
+                        <tr bgcolor=#e5e7e9>
+                            <td><strong>EB</strong></th>
+                            <td>07</td>
+                            <td></td>
+                            <td>07</td>
+                        </tr>
 
-                <tr>
-                    <td><strong>AB</strong></td>
-                    <td>02</td>
-                    <td></td>
-                    <td>02</td>
-                </tr>
+                        <tr>
+                            <td><strong>AB</strong></td>
+                            <td>02</td>
+                            <td></td>
+                            <td>02</td>
+                        </tr>
 
-                <tr bgcolor=#e5e7e9>
-                    <td><strong>AMB</strong></td>
-                    <td>01</td>
-                    <td>01</td>
-                    <td>02</td>
-                </tr>
+                        <tr bgcolor=#e5e7e9>
+                            <td><strong>AMB</strong></td>
+                            <td>01</td>
+                            <td>01</td>
+                            <td>02</td>
+                        </tr>
 
-                <tr bgcolor=#e5e7e9>
-                    <td><strong>TOTAL</strong></td>
-                    <td>10</td>
-                    <td>01</td>
-                    <td>11</td>
-                </tr>
-            </tbody>
-            </thead>
-        </table>
+                        <tr bgcolor=#e5e7e9>
+                            <td><strong>TOTAL</strong></td>
+                            <td>10</td>
+                            <td>01</td>
+                            <td>11</td>
+                        </tr>
+                    </tbody>
+                    </thead>
+                </table>
+            </div>
 
-        <h3>SIN CARGOS</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>MG - ALM</th>
-                    <th>GD - VA</th>
-                    <th>GB - CA</th>
-                </tr>
-            </thead>
+            <div class="tabla">
+                <h2 class="orange">SIN CARGOS</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>MG - ALM</th>
+                            <th>GD - VA</th>
+                            <th>GB - CA</th>
+                        </tr>
+                    </thead>
 
-            <tbody>
+                    <tbody>
 
-                <tr bgcolor=#e5e7e9>
-                    <td><strong>EB</strong></td>
-                    <td>01</td>
-                    <td>01</td>
-                    <td></td>
+                        <tr bgcolor=#e5e7e9>
+                            <td><strong>EB</strong></td>
+                            <td>01</td>
+                            <td>01</td>
+                            <td></td>
 
-                <tr>
-                    <td><strong>AMB</strong></td>
-                    <td></td>
-                    <td>01</td>
-                    <td>02</td>
+                        <tr>
+                            <td><strong>AMB</strong></td>
+                            <td></td>
+                            <td>01</td>
+                            <td>02</td>
 
-                </tr>
+                        </tr>
 
-                <tr bgcolor=#e5e7e9>
-                    <td><strong>TOTAL</strong></td>
-                    <td>01</td>
-                    <td>02</td>
-                    <td>02</td>
-            </tbody>
-        </table>
+                        <tr bgcolor=#e5e7e9>
+                            <td><strong>TOTAL</strong></td>
+                            <td>01</td>
+                            <td>02</td>
+                            <td>02</td>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
-        <h4>PRESUNTO DESERTOR</h4>
-        <table>
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>GD - VA</th>
-                    <th>TOTAL</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr bgcolor=#e5e7e9>
-                    <td><strong>AB</strong></th>
-                    <td>01</td>
-                    <td>01</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h4>PRIVADOS DE LIBERTAD</h4>
-        <table>
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>GD - VA</th>
-                    <th>GB - CA</th>
-                    <th>TOTAL</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <tr bgcolor=#e5e7e9>
-                    <td><strong>EB</strong></td>
-                    <td>02</td>
-                    <td>03</td>
-                    <td>05</td>
-                </tr>
-
-                <tr>
-                    <td><strong>AB</strong></td>
-                    <td>01</td>
-                    <td></td>
-                    <td>01</td>
-                </tr>
-
-                <tr bgcolor=#e5e7e9>
-                    <td><strong></strong></td>
-                    <td></td>
-                    <td>01</td>
-                    <td>01</td>
-                </tr>
-                <tr>
-                    <td><strong>TOTAL</strong></th>
-                    <td>03</td>
-                    <td>04</td>
-                    <td>07</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <table>
-            <thead>
-                <tr bgcolor=#85c1e9>
-                    <th></th>
-                    <th>GJ - AJ</th>
-                    <th>MG - ALM</th>
-                    <th>GD - VA</th>
-                    <th>GB - CA</th>
-                    <th>TOTAL</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <tr>
-                    <td><strong>MINISTERIO</strong></td>
-                    <td>01</td>
-                    <td>03</td>
-                    <td>05</td>
-                    <td>08</td>
-                    <td>17</td>
-                </tr>
-                <tr>
-                    <td><strong>SISTEMA DE JUSTICIA MILITAR</strong></th>
-                    <td></td>
-                    <td>01</td>
-                    <td>02</td>
-                    <td>03</td>
-                    <td>06</td>
-                </tr>
-                <tr>
-                    <td><strong>CONGEFANB</strong></td>
-                    <td></td>
-                    <td>01</td>
-                    <td>02</td>
-                    <td>01</td>
-                    <td>04</td>
-                </tr>
-                <tr>
-                    <td><strong>INGEFANB</strong></td>
-                    <td></td>
-                    <td>01</td>
-                    <td>07</td>
-                    <td>05</td>
-                    <td>13</td>
-                </tr>
-                <tr>
-                    <td><strong>DGCIM</strong></td>
-                    <td></td>
-                    <td></td>
-                    <td>01</td>
-                    <td>02</td>
-                    <td>03</td>
-                </tr>
-                <tr>
-                    <td><strong>GUARDIA DE HONOR PRESIDENCIAL</strong></td>
-                    <td></td>
-                    <td>01</td>
-                    <td>01</td>
-                    <td>04</td>
-                    <td>06</td>
-                </tr>
-                <tr>
-                    <td><strong>VIM SERVICIOS</strong></td>
-                    <td></td>
-                    <td>02</td>
-                    <td>13</td>
-                    <td>21</td>
-                    <td>36</td>
-                </tr>
-                <tr>
-                    <td><strong>VIM PLANIDICACION</strong></td>
-                    <td></td>
-                    <td>01</td>
-                    <td>08</td>
-                    <td>04</td>
-                    <td>13</td>
-                </tr>
-                <tr>
-                    <td><strong>CEOFAND</strong></td>
-                    <td>01</td>
-                    <td>12</td>
-                    <td>83</td>
-                    <td>87</td>
-                    <td>183</td>
-                </tr>
-                <tr>
-                    <td><strong>EJERCITO BOLIVARIANO</strong></td>
-                    <td></td>
-                    <td>01</td>
-                    <td>22</td>
-                    <td>39</td>
-                    <td>62</td>
-                </tr>
-                <tr>
-                    <td><strong>ARMADA BOLIVARIANA</strong></td>
-                    <td></td>
-                    <td>01</td>
-                    <td>20</td>
-                    <td>37</td>
-                    <td>58</td>
-                </tr>
-                <tr>
-                    <td><strong>AVIACION MILITAR BOLIVARIANA</strong></td>
-                    <td></td>
-                    <td>01</td>
-                    <td>25</td>
-                    <td>25</td>
-                    <td>51</td>
-                </tr>
-                <tr>
-                    <td><strong>GUARDIA NACIONAL BOLIVARIANA</strong></td>
-                    <td></td>
-                    <td>01</td>
-                    <td>29</td>
-                    <td>39</td>
-                    <td>69</td>
-                </tr>
-                <tr>
-                    <td><strong>MILICIA BOLIVARIANA</strong></td>
-                    <td></td>
-                    <td>01</td>
-                    <td>14</td>
-                    <td>31</td>
-                    <td>46</td>
-                </tr>
-                <tr>
-                    <td><strong>COMISION EXTERIOR</strong></td>
-                    <td></td>
-                    <td></td>
-                    <td>10</td>
-                    <td>01</td>
-                    <td>11</td>
-                </tr>
-                <tr>
-                    <td><strong>ADMINISTRACION PUBLICA</strong></td>
-                    <td>03</td>
-                    <td>05</td>
-                    <td>39</td>
-                    <td>32</td>
-                    <td>79</td>
-                </tr>
-                <tr>
-                    <td><strong>PRESUNTO DESERTOR</strong></td>
-                    <td></td>
-                    <td></td>
-                    <td>01</td>
-                    <td></td>
-                    <td>01</td>
-                </tr>
-                <tr>
-                    <td><strong>PRIVADO DE LIBERTAD</strong></td>
-                    <td></td>
-                    <td></td>
-                    <td>03</td>
-                    <td>04</td>
-                    <td>07</td>
-                </tr>
-                <tr>
-                    <td><strong>SIN CARGO</strong></td>
-                    <td></td>
-                    <td>01</td>
-                    <td>02</td>
-                    <td>02</td>
-                    <td>05</td>
-                </tr>
-                <tr bgcolor=#85c1e9>
-                    <td><strong>TOTAL</strong></td>
-                    <td>05</td>
-                    <td>34</td>
-                    <td>307</td>
-                    <td>353</td>
-                    <td>699</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="columna-2">
+            <div class="columna">
+                <div class="tabla" style="margin-top: 100px;">
+                    <h2 class="green">EJERCITO BOLIVARIANO</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>MG - ALM</th>
+                                <th>GD - VA</th>
+                                <th>GB - CA</th>
+                                <th>TOTAL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr bgcolor=#e5e7e9>
+                                <td>01</td>
+                                <td>22</td>
+                                <td>39</td>
+                                <td>62</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+    
+                <div class="tabla">
+                    <h2 class="green">COMANDO ESTRATEGICO OPERACIONAL</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>GJ - AJ</th>
+                                <th>MG - ALM</th>
+                                <th>GD - VA</th>
+                                <th>GB - CA</th>
+                                <th>TOTAL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+        
+                            <tr bgcolor=#e5e7e9>
+                                <td><strong>EB</strong></td>
+                                <td>01</td>
+                                <td>05</td>
+                                <td>39</td>
+                                <td>35</td>
+                                <td>80</td>
+                            </tr>
+        
+                            <tr>
+                                <td><strong>AB</strong></td>
+                                <td></td>
+                                <td>03</td>
+                                <td>16</td>
+                                <td>10</td>
+                                <Td>29</Td>
+                            </tr>
+        
+                            <tr bgcolor=#e5e7e9>
+                                <td><strong>AMB</strong></td>
+                                <td></td>
+                                <td>02</td>
+                                <td>14</td>
+                                <td>12</td>
+                                <Td>28</Td>
+                            </tr>
+        
+                            <tr>
+                                <td><strong>GNB</strong></td>
+                                <td></td>
+                                <td>02</td>
+                                <td>14</td>
+                                <td>30</td>
+                                <Td>46</Td>
+                            </tr>
+        
+                            <tr bgcolor=#e5e7e9>
+                                <td><strong>TOTAL</strong></td>
+                                <td>01</td>
+                                <td>12</td>
+                                <td>83</td>
+                                <td>87</td>
+                                <Td>183</Td>
+                            </tr>
+        
+                        </tbody>
+                    </table>
+                </div>
+        
+                <div class="tabla" style="margin-top: 100px;">
+                    <h2 class="green">AVIACION MILITAR BOLIVARIANA</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>MG - ALM</th>
+                                <th>GD - VA</th>
+                                <th>GB - CA</th>
+                                <th>TOTAL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr bgcolor=#e5e7e9>
+                                <td>01</td>
+                                <td>25</td>
+                                <td>25</td>
+                                <td>51</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        
+                <div class="tabla">
+                    <h2 class="green">ARMADA BOLIVARIANA</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>MG - ALM</th>
+                                <th>GD - VA</th>
+                                <th>GB - CA</th>
+                                <th>TOTAL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr bgcolor=#e5e7e9>
+                                <td>01</td>
+                                <td>20</td>
+                                <td>37</td>
+                                <td>58</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+    
+                <div class="tabla" style="margin-top: 10px;">
+                    <h2 class="green">MILICIA BOLIVARIANA</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>MG - ALM</th>
+                                <th>GD - VA</th>
+                                <th>GB - CA</th>
+                                <th>TOTAL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr bgcolor=#e5e7e9>
+                                <td><strong>EB</strong></td>
+                                <td>01</td>
+                                <td>07</td>
+                                <td>18</td>
+                                <td>26</td>
+                            </tr>
+        
+                            <tr>
+                                <td><strong>AB</strong></td>
+                                <td></td>
+                                <td>03</td>
+                                <td>04</td>
+                                <td>07</td>
+                            </tr>
+        
+                            <tr bgcolor=#e5e7e9>
+                                <td><strong>AMB</strong></td>
+                                <td></td>
+                                <td>03</td>
+                                <td>02</td>
+                                <td>05</td>
+                            </tr>
+        
+                            <tr>
+                                <td><strong>GNB</strong></td>
+                                <td></td>
+                                <td>01</td>
+                                <td>07</td>
+                                <td>08</td>
+                            </tr>
+        
+                            <tr bgcolor=#e5e7e9>
+                                <td><strong>TOTAL</strong></td>
+                                <td>01</td>
+                                <td>14</td>
+                                <td>31</td>
+                                <td>46</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        
+                <div class="tabla">
+                    <h2 class="green">GUARDIA NACIONAL BOLIVARIANA</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>MG - ALM</th>
+                                <th>GD - VA</th>
+                                <th>GB - CA</th>
+                                <th>TOTAL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr bgcolor=#e5e7e9>
+                                <td>01</td>
+                                <td>29</td>
+                                <td>36</td>
+                                <td>69</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    
+            <div class="fila">
+                <div class="flex-column">
+                    <div class="tabla">
+                        <h2 class="blue-dark">PRESUNTO DESERTOR</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>GD - VA</th>
+                                    <th>TOTAL</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr bgcolor=#e5e7e9>
+                                    <td><strong>AB</strong></th>
+                                    <td>01</td>
+                                    <td>01</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+            
+                    <div class="tabla">
+                        <h2 class="blue-dark">PRIVADOS DE LIBERTAD</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>GD - VA</th>
+                                    <th>GB - CA</th>
+                                    <th>TOTAL</th>
+                                </tr>
+                            </thead>
+            
+                            <tbody>
+                                <tr bgcolor=#e5e7e9>
+                                    <td><strong>EB</strong></td>
+                                    <td>02</td>
+                                    <td>03</td>
+                                    <td>05</td>
+                                </tr>
+            
+                                <tr>
+                                    <td><strong>AB</strong></td>
+                                    <td>01</td>
+                                    <td></td>
+                                    <td>01</td>
+                                </tr>
+            
+                                <tr bgcolor=#e5e7e9>
+                                    <td><strong></strong></td>
+                                    <td></td>
+                                    <td>01</td>
+                                    <td>01</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>TOTAL</strong></th>
+                                    <td>03</td>
+                                    <td>04</td>
+                                    <td>07</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+        
+                <div class="tabla tabla-grande">
+                    <table>
+                        <thead>
+                            <tr bgcolor=#85c1e9>
+                                <th></th>
+                                <th>GJ - AJ</th>
+                                <th>MG - ALM</th>
+                                <th>GD - VA</th>
+                                <th>GB - CA</th>
+                                <th>TOTAL</th>
+                            </tr>
+                        </thead>
+        
+                        <tbody>
+                            <tr>
+                                <td><strong>MINISTERIO</strong></td>
+                                <td>01</td>
+                                <td>03</td>
+                                <td>05</td>
+                                <td>08</td>
+                                <td>17</td>
+                            </tr>
+                            <tr>
+                                <td><strong>SISTEMA DE JUSTICIA MILITAR</strong></th>
+                                <td></td>
+                                <td>01</td>
+                                <td>02</td>
+                                <td>03</td>
+                                <td>06</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CONGEFANB</strong></td>
+                                <td></td>
+                                <td>01</td>
+                                <td>02</td>
+                                <td>01</td>
+                                <td>04</td>
+                            </tr>
+                            <tr>
+                                <td><strong>INGEFANB</strong></td>
+                                <td></td>
+                                <td>01</td>
+                                <td>07</td>
+                                <td>05</td>
+                                <td>13</td>
+                            </tr>
+                            <tr>
+                                <td><strong>DGCIM</strong></td>
+                                <td></td>
+                                <td></td>
+                                <td>01</td>
+                                <td>02</td>
+                                <td>03</td>
+                            </tr>
+                            <tr>
+                                <td><strong>GUARDIA DE HONOR PRESIDENCIAL</strong></td>
+                                <td></td>
+                                <td>01</td>
+                                <td>01</td>
+                                <td>04</td>
+                                <td>06</td>
+                            </tr>
+                            <tr>
+                                <td><strong>VIM SERVICIOS</strong></td>
+                                <td></td>
+                                <td>02</td>
+                                <td>13</td>
+                                <td>21</td>
+                                <td>36</td>
+                            </tr>
+                            <tr>
+                                <td><strong>VIM PLANIDICACION</strong></td>
+                                <td></td>
+                                <td>01</td>
+                                <td>08</td>
+                                <td>04</td>
+                                <td>13</td>
+                            </tr>
+                            <tr>
+                                <td><strong>CEOFAND</strong></td>
+                                <td>01</td>
+                                <td>12</td>
+                                <td>83</td>
+                                <td>87</td>
+                                <td>183</td>
+                            </tr>
+                            <tr>
+                                <td><strong>EJERCITO BOLIVARIANO</strong></td>
+                                <td></td>
+                                <td>01</td>
+                                <td>22</td>
+                                <td>39</td>
+                                <td>62</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ARMADA BOLIVARIANA</strong></td>
+                                <td></td>
+                                <td>01</td>
+                                <td>20</td>
+                                <td>37</td>
+                                <td>58</td>
+                            </tr>
+                            <tr>
+                                <td><strong>AVIACION MILITAR BOLIVARIANA</strong></td>
+                                <td></td>
+                                <td>01</td>
+                                <td>25</td>
+                                <td>25</td>
+                                <td>51</td>
+                            </tr>
+                            <tr>
+                                <td><strong>GUARDIA NACIONAL BOLIVARIANA</strong></td>
+                                <td></td>
+                                <td>01</td>
+                                <td>29</td>
+                                <td>39</td>
+                                <td>69</td>
+                            </tr>
+                            <tr>
+                                <td><strong>MILICIA BOLIVARIANA</strong></td>
+                                <td></td>
+                                <td>01</td>
+                                <td>14</td>
+                                <td>31</td>
+                                <td>46</td>
+                            </tr>
+                            <tr>
+                                <td><strong>COMISION EXTERIOR</strong></td>
+                                <td></td>
+                                <td></td>
+                                <td>10</td>
+                                <td>01</td>
+                                <td>11</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ADMINISTRACION PUBLICA</strong></td>
+                                <td>03</td>
+                                <td>05</td>
+                                <td>39</td>
+                                <td>32</td>
+                                <td>79</td>
+                            </tr>
+                            <tr>
+                                <td><strong>PRESUNTO DESERTOR</strong></td>
+                                <td></td>
+                                <td></td>
+                                <td>01</td>
+                                <td></td>
+                                <td>01</td>
+                            </tr>
+                            <tr>
+                                <td><strong>PRIVADO DE LIBERTAD</strong></td>
+                                <td></td>
+                                <td></td>
+                                <td>03</td>
+                                <td>04</td>
+                                <td>07</td>
+                            </tr>
+                            <tr>
+                                <td><strong>SIN CARGO</strong></td>
+                                <td></td>
+                                <td>01</td>
+                                <td>02</td>
+                                <td>02</td>
+                                <td>05</td>
+                            </tr>
+                            <tr bgcolor=#85c1e9>
+                                <td><strong>TOTAL</strong></td>
+                                <td>05</td>
+                                <td>34</td>
+                                <td>307</td>
+                                <td>353</td>
+                                <td>699</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 
